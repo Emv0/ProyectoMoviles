@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ClientesActivity" android:layout_width="match_parent">
+
+    <TextView
+        android:id="@+id/tvvehiculo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Vehiculos"
+        android:textSize="35dp" />
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etplaca"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:enabled="true"
+            android:gravity="center"
+            android:hint="Placa"
+            android:textSize="28dp" />
+
+        <Button
+            android:id="@+id/btbuscar"
+            android:layout_width="160dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="Consultar_Vehiculo"
+            android:text="Buscar"
+            android:textSize="28dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etmarca"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:hint="Digite marca del auto"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/etmodelo"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:inputType="number"
+        android:hint="Digite el modelo del auto"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/etvalor"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:hint="Digite el valor del auto"
+        android:inputType="number"
+        android:textSize="30dp" />
+
+    <CheckBox
+        android:id="@+id/cbactivo"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:enabled="false"
+        android:text="Activo"
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btguardar"
+            android:layout_width="141dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="Guardar_Vehiculo"
+            android:text="Guardar"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btanular"
+            android:onClick="Anular_Vehiculo"
+            android:layout_width="141dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="Anular"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btlimpiar"
+            android:layout_width="141dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:text="Limpiar"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btregresar"
+            android:layout_width="141dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:onClick="Regresar_Vehiculo"
+            android:text="Regresar"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+</LinearLayout>
