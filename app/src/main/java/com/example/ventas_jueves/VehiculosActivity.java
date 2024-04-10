@@ -87,6 +87,9 @@ public class VehiculosActivity extends AppCompatActivity {
                 btAnular.setEnabled(true);
                 btGuardar.setEnabled(true);
                 cbActivo.setEnabled(true);
+                etMarca.setEnabled(true);
+                etModelo.setEnabled(true);
+                etValor.setEnabled(true);
                 sw = true;
                 etMarca.setText(fila.getString(1));
                 etModelo.setText(fila.getString(2));
@@ -129,11 +132,21 @@ public class VehiculosActivity extends AppCompatActivity {
         startActivity(intmain);
     }
 
-    public void Limpiar_Campos_Vehiculo() {
+    public void Limpiar_Campos(View view){Limpiar_Campos_Vehiculo();}
+
+    private void Limpiar_Campos_Vehiculo() {
         etPlaca.setText("");
         etMarca.setText("");
         etModelo.setText("");
         etValor.setText("");
+        etPlaca.setEnabled(true);
+        cbActivo.setEnabled(false);
+        etMarca.setEnabled(false);
+        etModelo.setEnabled(false);
+        etValor.setEnabled(false);
+        btGuardar.setEnabled(true);
+        btGuardar.setEnabled(false);
+        btAnular.setEnabled(false);
         cbActivo.setChecked(false);
         cbActivo.setEnabled(false);
     }

@@ -51,6 +51,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
+        android:enabled="false"
         android:hint="Digite marca del auto"
         android:textSize="30dp" />
 
@@ -60,6 +61,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
+        android:enabled="false"
         android:inputType="number"
         android:hint="Digite el modelo del auto"
         android:textSize="30dp" />
@@ -70,6 +72,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
+        android:enabled="false"
         android:hint="Digite el valor del auto"
         android:inputType="number"
         android:textSize="30dp" />
@@ -124,6 +127,7 @@
             android:layout_height="55dp"
             android:layout_weight="1"
             android:text="Limpiar"
+            android:onClick="Limpiar_Campos"
             android:textSize="25dp" />
 
         <Button
