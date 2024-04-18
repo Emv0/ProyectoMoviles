@@ -40,21 +40,31 @@
             android:layout_width="198dp"
             android:layout_height="55dp"
             android:onClick="Consultar_factura"
+            android:enabled="true"
             android:layout_weight="1"
             android:text="Consultar"
             android:textSize="25dp" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="Fecha factura"/>
     <EditText
         android:id="@+id/etfecha"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:textSize="30dp"
+        android:enabled="false"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Digite fecha factura" />
+        android:inputType="date"
+        android:hint="DD/MM/AAAA" />
+
 
     <LinearLayout
         android:layout_width="370dp"
@@ -68,16 +78,18 @@
             android:layout_width="184dp"
             android:layout_height="55dp"
             android:layout_weight="1"
+            android:enabled="false"
             android:ems="10"
             android:gravity="center"
             android:hint="Identificacion"
-            android:inputType="number"
             android:textSize="30dp" />
 
         <Button
             android:id="@+id/btconcliente"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
+            android:onClick="Consultar_cliente"
+            android:enabled="false"
             android:textSize="25dp"
             android:layout_weight="1"
             android:text="Cliente" />
@@ -121,10 +133,10 @@
             android:layout_width="180dp"
             android:layout_height="55dp"
             android:layout_weight="1"
+            android:enabled="false"
             android:ems="10"
             android:gravity="center"
             android:hint="Placa"
-            android:inputType="number"
             android:textSize="30dp" />
 
         <Button
@@ -132,6 +144,8 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
+            android:enabled="false"
+            android:onClick="Consultar_vehiculo"
             android:layout_weight="1"
             android:text="Vehiculo" />
     </LinearLayout>
@@ -168,6 +182,7 @@
         android:layout_height="55dp"
         android:textSize="30dp"
         android:layout_gravity="center"
+        android:enabled="false"
         android:layout_marginTop="10dp"
         android:text=" Activo" />
 
@@ -183,7 +198,9 @@
             android:layout_width="95dp"
             android:layout_height="55dp"
             android:layout_weight="1"
+            android:enabled="false"
             android:text="Adicionar"
+            android:onClick="Guardar_factura"
             android:textSize="25dp" />
 
         <Button
@@ -191,6 +208,8 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
+            android:enabled="false"
+            android:onClick="Anular_Factura"
             android:layout_marginLeft="7dp"
             android:layout_weight="1"
             android:text="Anular" />
@@ -208,6 +227,7 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
+            android:onClick="Limpiar_Factura"
             android:layout_weight="1"
             android:text="Limpiar" />
 
@@ -216,6 +236,7 @@
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:textSize="25dp"
+            android:onClick="Regresar_factura"
             android:layout_marginLeft="7dp"
             android:layout_weight="1"
             android:text="Regresar" />

@@ -20,7 +20,7 @@ public class ClientesActivity extends AppCompatActivity {
     String identificacion,nombre,direccion,telefono;
     Long respuesta;
     boolean sw;
-    ClsOpenHelper objconexion=new ClsOpenHelper(this,"Concesionario1.db",null,1);
+    ClsOpenHelper objConexion = new ClsOpenHelper(this, "Consesionario1.db", null, 3);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ public class ClientesActivity extends AppCompatActivity {
         btregresar=findViewById(R.id.btregresar);
         cbactivo=findViewById(R.id.cbactivo);
         etidentificacion.requestFocus();
-        sw=false;
     }//fin metodo onCreate
 
     public void Guardar(View view) {
@@ -51,7 +50,7 @@ public class ClientesActivity extends AppCompatActivity {
         if (!identificacion.isEmpty() && !nombre.isEmpty() && !direccion.isEmpty()
            && !telefono.isEmpty()){
             //Abrir la conexion en modo de escritorio
-            SQLiteDatabase admin=objconexion.getWritableDatabase();
+            SQLiteDatabase admin=objConexion.getWritableDatabase();
             //Instanciar el contenedor
             ContentValues registro=new ContentValues();
             registro.put("Identificacion",identificacion);
@@ -62,10 +61,11 @@ public class ClientesActivity extends AppCompatActivity {
             if (sw == false)
                 respuesta = admin.insert("TblCliente",null,registro);
             else{
-                if (cbactivo.isChecked())
-                    registro.put("Activo","Si");
-                else
-                    registro.put("Activo","No");
+                if (cbactivo.isChecked()) {
+                    registro.put("Activo", "Si");
+                }else {
+                    registro.put("Activo", "No");
+                }
                 respuesta=(long)admin.update("TblCliente",registro,"identificacion='"+identificacion+"'",null);
             }
 
@@ -89,7 +89,7 @@ public class ClientesActivity extends AppCompatActivity {
         //Validar que si digito la identificacion
         if (!identificacion.isEmpty()){
             //Abrir la base de datos en modo lectura
-            SQLiteDatabase admin=objconexion.getReadableDatabase();
+            SQLiteDatabase admin=objConexion.getReadableDatabase();
             //Definir la tabla en memoria RAM donde voy a guardar el resultado de la consulta
             Cursor fila=admin.rawQuery("select * from TblCliente where identificacion='"+identificacion+"'",null);
             if (fila.moveToNext()){
@@ -120,7 +120,7 @@ public class ClientesActivity extends AppCompatActivity {
     }//Fin metodo Consultar
 
     public void Anular(View view){
-        SQLiteDatabase admin=objconexion.getWritableDatabase();
+        SQLiteDatabase admin=objConexion.getWritableDatabase();
         ContentValues registro=new ContentValues();
         registro.put("Activo","No");
         //Anular el registro

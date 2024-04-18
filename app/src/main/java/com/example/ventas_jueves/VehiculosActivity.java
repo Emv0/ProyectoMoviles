@@ -22,7 +22,7 @@ public class VehiculosActivity extends AppCompatActivity {
     EditText etPlaca, etMarca, etModelo, etValor;
     Button btBuscar, btGuardar, btAnular, btLimpiar, btRegresar;
     CheckBox cbActivo;
-    ClsOpenHelper objConexion = new ClsOpenHelper(this, "Consesionario1.db", null, 2);
+    ClsOpenHelper objConexion = new ClsOpenHelper(this, "Consesionario1.db", null, 3);
 
 
     @Override
@@ -56,14 +56,15 @@ public class VehiculosActivity extends AppCompatActivity {
             registro.put("Modelo", modelo);
             registro.put("Valor", valor);
             if (!sw) {
-                respuesta = admin.insert("TblVehiculo", null, registro);
+                //respuesta = admin.insert("TblVehiculo", null, registro);
+                respuesta = objConexion.getWritableDatabase().insert("TblVehiculo",null,registro);
             } else {
                 if (cbActivo.isChecked()) {
                     registro.put("Activo", "Si");
                 } else {
                     registro.put("Activo", "No");
                 }
-                respuesta = admin.update("TblVehiculo", registro, "Placa='" + placa + "'", null);
+                respuesta =(long)admin.update("TblVehiculo", registro, "Placa='" + placa + "'", null);
             }
             if (respuesta > 0) {
                 Toast.makeText(this, "Registro guardado", Toast.LENGTH_SHORT).show();
@@ -149,5 +150,6 @@ public class VehiculosActivity extends AppCompatActivity {
         btAnular.setEnabled(false);
         cbActivo.setChecked(false);
         cbActivo.setEnabled(false);
+        sw=false;
     }
 }
